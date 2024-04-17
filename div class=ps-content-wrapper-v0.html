@@ -1,0 +1,171 @@
+<div class="ps-content-wrapper-v0">
+<p>Use the <em>HTTP GET</em> method to retrieve information from a database of universities across the globe. Query <em>https://jsonmock.hackerrank.com/api/universities</em> to find all the records. The query result is paginated and can be further accessed by appending to the query string <em>?page=num</em> where <em>num</em> is the page number.</p>
+
+<p>&nbsp;</p>
+
+<p>The response is a JSON object with the following 5 fields:</p>
+
+<ul>
+	<li>
+	<p><em>page</em>: The current page of the results.&nbsp;(Number)</p>
+	</li>
+	<li>
+	<p><em>per_page</em>: The maximum number of results returned per page.&nbsp;(Number)</p>
+	</li>
+	<li>
+	<p><em>total</em>: The total number of results.&nbsp;(Number)</p>
+	</li>
+	<li>
+	<p><em>total_pages</em>: The total number of pages with results.&nbsp;(Number)</p>
+	</li>
+	<li>
+	<p><em>data</em>: Either an empty array or an&nbsp;array with a single&nbsp;object&nbsp;that contains&nbsp;the universities' records.</p>
+	</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Example of a <em>data</em>&nbsp;array object:</p>
+
+<pre>  "university": "King's College London",
+  "rank_display": "35",
+  "score": 82,
+  "type": "Public",
+  "student_faculty_ratio": 7,
+  "international_students": "15,075",
+  "faculty_count": "4,216",
+  "location": {
+    "city": "London",
+    "country": "United Kingdom",
+    "region": "Europe"
+  }
+</pre>
+
+<p>&nbsp;</p>
+
+<p>In <em>data</em>, each university has the following schema:</p>
+
+<ul>
+	<li>
+	<p><em>university:</em> The name of the university (String)</p>
+	</li>
+	<li>
+	<p><em>rank_display</em>: The rank of the university according to the 2022 QS Rankings (String).</p>
+	</li>
+	<li>
+	<p><em>score</em>: The score of the university according to the 2022 QS Rankings (Number).</p>
+	</li>
+	<li>
+	<p><em>type</em>: The type of university (String)</p>
+	</li>
+	<li>
+	<p><em>student_faculty_ratio:</em>&nbsp;The ratio of number of students to the number of faculty. (Number)</p>
+	</li>
+	<li>
+	<p><em>international_students</em>: The number of international students (String).</p>
+	</li>
+	<li>
+	<p><em>faculty_count</em>: The number of faculty (String)</p>
+	</li>
+	<li>
+	<p><em>location:</em> An object containing the location details. The object has the following schema:</p>
+	</li>
+	<li>
+	<ul>
+		<li>
+		<p><em>city:</em>&nbsp;(String)</p>
+		</li>
+		<li>
+		<p><em>country:</em>&nbsp;(String)</p>
+		</li>
+		<li>
+		<p><em>region</em>: (String)</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Complete the <em>highestInternationalStudents </em>function where given the name of two cities as parameters, return the name of the university with the highest number of international students in the first city. If the first city does not have a university within the data, return the university with the highest number of international students in the<i> </i><em>second city</em>.</p>
+
+<p>&nbsp;</p>
+
+<p aria-level="4" class="section-title" data-a11y="p-s-t" role="heading">Function Description</p>
+
+<p>Complete the function <em>highestInternationalStudents&nbsp;</em>in the editor.</p>
+
+<p>&nbsp;</p>
+
+<p><em>highestInternationalStudents</em>&nbsp;has the following parameters:</p>
+
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;string firstCity: </em>name of the first city</p>
+
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;string secondCity: </em>name of the second city</p>
+
+<p>&nbsp;</p>
+
+<p aria-level="4" class="section-title" data-a11y="p-s-t" role="heading">Returns&nbsp;</p>
+
+<p>&nbsp;&nbsp;&nbsp;<em>string:</em>&nbsp;the university with the highest number of international students<i>.</i></p>
+
+<p>&nbsp;</p>
+
+<p aria-level="4" class="section-title" data-a11y="p-s-t" role="heading">Constraints&nbsp;</p>
+
+<p>&nbsp;&nbsp;&nbsp;There is always a university in one of the two cities.</p>
+
+<p>&nbsp;</p>
+
+<p><strong>Note:</strong>&nbsp;Please review the header in the code stub to see available libraries for API requests in the selected language. Required libraries can be imported in order to solve the question. Check our full list of supported libraries at <a href="https://www.hackerrank.com/environment">https://www.hackerrank.com/environment</a>.</p>
+<!-- </StartOfInputFormat> DO NOT REMOVE THIS LINE-->
+
+<details open="open"><summary class="section-title" data-a11y="d-s"><span aria-level="4" data-a11y="d-s-t" role="heading">Sample Case 0</span></summary>
+
+<div class="collapsable-details">
+<p aria-level="5" class="section-title" data-a11y="d-p-s-t" role="heading">Sample Input For Custom Testing</p>
+
+<pre>Singapore
+New York City</pre>
+
+<p aria-level="5" class="section-title" data-a11y="d-p-s-t" role="heading">Sample Output</p>
+
+<pre>National University of Singapore (NUS)
+</pre>
+</div>
+</details>
+
+<details><summary class="section-title" data-a11y="d-s"><span aria-level="4" data-a11y="d-s-t" role="heading">Sample Case 1</span></summary>
+
+<div class="collapsable-details">
+<p aria-level="5" class="section-title" data-a11y="d-p-s-t" role="heading">Sample Input For Custom Testing</p>
+
+<pre>Pune&nbsp;
+New Delhi</pre>
+
+<p aria-level="5" class="section-title" data-a11y="d-p-s-t" role="heading">Sample Output</p>
+
+<pre>Indian Institute of Technology Delhi (IITD)
+</pre>
+
+<p aria-level="5" class="section-title" data-a11y="d-p-s-t" role="heading">Explanation</p>
+
+<pre>Since <strong>Pune</strong> does not have a university in the list, the university with the highest international students in <strong>Delhi</strong> is printed.</pre>
+</div>
+</details>
+
+<details><summary class="section-title" data-a11y="d-s"><span aria-level="4" data-a11y="d-s-t" role="heading">Sample Case 2</span></summary>
+
+<div class="collapsable-details">
+<p aria-level="5" class="section-title" data-a11y="d-p-s-t" role="heading">Sample Input For Custom Testing</p>
+
+<pre>Princeton
+London</pre>
+
+<p aria-level="5" class="section-title" data-a11y="d-p-s-t" role="heading">Sample Output</p>
+
+<pre>Princeton University
+</pre>
+</div>
+</details>
+</div>
